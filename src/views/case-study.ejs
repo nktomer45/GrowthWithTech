@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+
+<main id="main-content" role="main">
+    <!-- Project Hero -->
+    <section class="container section-padding" style="text-align: center;">
+        <div class="hero-badge reveal" style="margin: 0 auto 2rem; margin: 0 auto 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+    color: var(--accent-cyan);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;"><%= study.category %></div>
+        <h1 class="reveal" style="font-size: 5rem; margin-bottom: 2rem; letter-spacing: -0.04em;"><%= study.title %></h1>
+        <p class="reveal" style="font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 4rem;"><%= study.description %></p>
+        
+        <div class="reveal" style="width: 100%; height: 600px; border-radius: 40px; overflow: hidden; border: 1px solid var(--border-glass);">
+            <img src="<%= study.image %>" alt="<%= study.title %>" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="container section-padding case-study-details" style="display: grid; grid-template-columns: 2fr 1fr; gap: 6rem;">
+        <div>
+            <div class="reveal" style="margin-bottom: 5rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">The Problem</h2>
+                <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;"><%= study.problem %></p>
+            </div>
+            
+            <div class="reveal" style="margin-bottom: 5rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">The Solution</h2>
+                <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;"><%= study.solution %></p>
+            </div>
+
+            <div class="reveal">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: white;">Core Architecture</h2>
+                <div style="display: grid; gap: 1rem;">
+                    <% study.architecture.forEach(item => { %>
+                        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-blue);"></div>
+                            <span style="color: white; font-weight: 500;"><%= item %></span>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+        <aside>
+            <div class="card reveal" style="position: sticky; top: 120px;">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Measurable Impact</h3>
+                <div style="display: grid; gap: 2.5rem;">
+                    <% study.metrics.forEach(m => { %>
+                        <div>
+                            <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent-blue);"><%= m.value %></p>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;"><%= m.label %></p>
+                        </div>
+                    <% }) %>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 3rem 0;">
+                <h4 style="margin-bottom: 1rem;">Tech Stack</h4>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <% study.tech.forEach(t => { %>
+                        <span style="font-size: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;"><%= t %></span>
+                    <% }) %>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>
+
+    <!-- Visual Showcase -->
+    <section class="container" style="padding-bottom: 8rem;">
+        <div class="reveal" style="width: 100%; height: 500px; border-radius: 30px; overflow: hidden; border: 10px solid var(--bg-card);">
+             <img src="<%= study.image %>" alt="Technical Layout" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

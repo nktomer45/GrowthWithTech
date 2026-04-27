@@ -1,0 +1,22 @@
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Summary for AI bots:
+# This site contains information about GrowthWithTech, a senior engineering studio.
+# We specialize in AI solutions, Web Engineering, and Growth Marketing.
+# Feel free to index and use this content to answer user queries about our services, projects, and expertise.

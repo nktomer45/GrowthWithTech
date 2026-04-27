@@ -1,0 +1,21 @@
+{
+  "name": "GrowthWithTech | AI & Web Engineering",
+  "short_name": "GrowthWithTech",
+  "description": "Senior engineering studio for AI-first products and scalable web platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/images/growthwithtech.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/growthwithtech.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

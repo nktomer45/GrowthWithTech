@@ -1,0 +1,140 @@
+<%- include('partials/header') %>
+
+<main id="main-content" role="main">
+    <!-- Hero & Services Grid -->
+    <section class="container section-padding">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.1); color: var(--accent-cyan); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;">
+                Services
+            </div>
+            <h1 class="reveal" style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.04em;">Everything you need to <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ship</span></h1>
+            <p class="reveal" style="font-size: 1.125rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.6;">A senior team that handles strategy, design, engineering, AI, and growth — without the agency overhead.</p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+            <% services.forEach(service => { %>
+                <div class="card service-card reveal" style="padding: 2rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px; display: flex; flex-direction: row; align-items: flex-start; gap: 1.5rem;">
+                    <div class="icon-box" style="margin-bottom: 0 !important; width: 44px; height: 44px; min-width: 44px;"><i class="fas fa-<%= service.icon %>"></i></div>
+                    <div>
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;"><%= service.title %></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.5; font-size: 0.9rem;"><%= service.description %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.1); color: var(--accent-cyan); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;">
+                How We Work
+            </div>
+            <h2 class="reveal" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">A <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">disciplined</span> process</h2>
+        </div>
+        
+        <div class="grid grid-4" style="text-align: left; gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+            <div class="card reveal" style="padding: 2rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+                <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.5rem;">01</div>
+                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Discover</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.85rem;">Needs, architecture, success metrics, technical limits.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+                <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.5rem;">02</div>
+                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Design</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.85rem;">Wireframes, prototypes, design system, flows.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+                <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.5rem;">03</div>
+                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Build</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.85rem;">Iterative shipping with weekly demos and metrics.</p>
+            </div>
+            <div class="card reveal" style="padding: 2rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+                <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.5rem;">04</div>
+                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Grow</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.85rem;">Measure, optimize, and scale with real data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section-padding container" style="margin-bottom: 6rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.1); color: var(--accent-cyan); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;">
+                Capabilities
+            </div>
+            <h2 class="reveal" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">What's <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">included</span></h2>
+        </div>
+        
+        <div class="grid grid-2" style="gap: 1rem; max-width: 800px; margin: 0 auto 4rem;">
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">Discovery, scoping & technical architecture</span>
+            </div>
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">Design systems and component libraries</span>
+            </div>
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">Performance budgets, Core Web Vitals optimizations</span>
+            </div>
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">APIs, automations, and agentic workflows built</span>
+            </div>
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">Analytics, attribution, and growth experimentation</span>
+            </div>
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; background: rgba(10, 14, 23, 0.6); border: 1px solid var(--border-glass); padding: 1.25rem 1.5rem; border-radius: 12px;">
+                <i class="fas fa-check" style="color: var(--accent-cyan); font-size: 0.8rem;"></i>
+                <span style="color: var(--text-secondary); font-size: 0.95rem;">Robust CI/CD and QA systems</span>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/contact" class="btn-nav" style="padding: 0.8rem 2.5rem; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600;">Discuss your project <i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+        </div>
+    </section>
+</main>
+
+<style>
+@keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+</style>
+
+<!-- FAQ Schema for AI & Search Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does GrowthWithTech offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GrowthWithTech offers senior engineering services including Web Development (React, TypeScript, Node.js), Agentic AI solutions, Custom Chatbots, SEO, Digital Marketing, and Paid Ads management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide custom AI chatbot solutions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we specialize in RAG-powered custom AI chatbots and autonomous agentic workflows using LangGraph, OpenAI, and Gemini."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is GrowthWithTech located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GrowthWithTech is headquartered in Noida, India, at Gaur City Mall, serving clients worldwide."
+      }
+    }
+  ]
+}
+</script>
+
+<%- include('partials/footer') %>

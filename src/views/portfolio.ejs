@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<main id="main-content" role="main">
+    <section class="container section-padding">
+        <div style="text-align: center; margin-bottom: 6rem;">
+            <div class="hero-badge reveal" style="margin: 0 auto 2rem; margin: 0 auto 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+    color: var(--accent-cyan);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;">PORTFOLIO</div>
+            <h1 class="reveal" style="font-size: 72px; font-weight: 700; line-height: 1.1; letter-spacing: -0.05em; margin-bottom: 1.5rem;">Work that moves the <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">needle</span></h1>
+            <p class="reveal" style="font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">A selection of high-impact engineering and growth projects for teams obsessed with performance.</p>
+        </div>
+        
+        <div class="grid grid-2" style="gap: 2rem;">
+            <% projects.forEach(project => { %>
+                <div class="card reveal" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase;"><%= project.category %></span>
+                            <h2 style="font-size: 1.75rem; margin-top: 0.5rem;"><%= project.title %></h2>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);"><%= project.client %></p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;"><%= project.description %></p>
+                    
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <% project.tech.forEach(t => { %>
+                            <span style="font-size: 0.7rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 0.8rem; border-radius: 999px;"><%= t %></span>
+                        <% }) %>
+                    </div>
+                    
+                    <a href="/case-study/<%= project.id %>" style="color: white; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                        View Case Study <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
