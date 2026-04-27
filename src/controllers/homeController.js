@@ -117,7 +117,7 @@ const services = [
 exports.getHomePage = (req, res) => {
     res.render('index', {
         title: 'GrowthWithTech | AI, Web & Growth Engineering Studio',
-        seoDesc: 'GrowthWithTech is a senior engineering studio in Noida delivering AI agents, scalable web platforms, SEO, digital marketing, and growth systems. 70+ products shipped. 40+ clients worldwide.',
+        seoDesc: 'GrowthWithTech is a senior engineering studio in Noida delivering AI agents, scalable web platforms, SEO, digital marketing, and growth systems. 25+ products shipped. 15+ clients worldwide.',
         pageUrl: '/',
         schemaType: 'WebPage',
         projects: projects.slice(0, 4),
@@ -171,7 +171,7 @@ exports.getCaseStudyPage = (req, res) => {
 exports.getAboutPage = (req, res) => {
     res.render('about', {
         title: 'About GrowthWithTech | Senior Engineering Studio in Noida',
-        seoDesc: 'GrowthWithTech is a senior engineering studio founded in 2013. 10+ years experience, 70+ products shipped, 40+ clients served across AI, web, and growth engineering.',
+        seoDesc: 'GrowthWithTech is a senior engineering studio founded in 2013. 5+ years experience, 25+ products shipped, 15+ clients served across AI, web, and growth engineering.',
         pageUrl: '/about',
         breadcrumbs: [
             { name: 'Home', url: 'https://growthwithtech.com/' },
