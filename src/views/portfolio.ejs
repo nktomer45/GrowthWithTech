@@ -35,11 +35,11 @@
                     
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
                         <% project.tech.forEach(t => { %>
-                            <span style="font-size: 0.7rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 0.8rem; border-radius: 999px;"><%= t %></span>
+                            <span style="font-size: 0.7rem; background: rgba(0,0,0,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 0.8rem; border-radius: 999px; color: var(--text-secondary);"><%= t %></span>
                         <% }) %>
                     </div>
                     
-                    <a href="/case-study/<%= project.id %>" style="color: white; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <a href="/case-study/<%= project.id %>" style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
                         View Case Study <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
                     </a>
                 </div>

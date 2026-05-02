@@ -235,3 +235,11 @@ ${pages.map(p => `  <url>
     res.send(xml);
 };
 
+exports.getOfflinePage = (req, res) => {
+    res.render('offline', {
+        title: 'Offline | GrowthWithTech',
+        seoDesc: 'You are currently offline. GrowthWithTech is a senior engineering studio delivering AI agents and scalable web platforms.',
+        pageUrl: '/offline'
+    });
+};
+

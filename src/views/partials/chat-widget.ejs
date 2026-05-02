@@ -1,0 +1,53 @@
+<div id="ai-chat-widget" class="ai-chat-widget">
+    <!-- Chat Button -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Open AI Chat">
+        <div class="btn-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+        <span class="btn-text">Chat with AI</span>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window hidden">
+        <div class="chat-header">
+            <div class="header-info">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                    <span class="online-indicator"></span>
+                </div>
+                <div class="header-text">
+                    <h3>GWT Assistant</h3>
+                    <p>AI-powered support</p>
+                </div>
+            </div>
+            <button id="close-chat" class="close-chat" aria-label="Close Chat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hello! I'm the GrowthWithTech assistant. How can I help you today?
+                </div>
+                <span class="message-time">Just now</span>
+            </div>
+        </div>
+
+        <div id="typing-indicator" class="typing-indicator hidden">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <form id="chat-form" class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+            <button type="submit" id="send-btn" aria-label="Send Message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/css/chat-widget.css">
+<script src="/js/chat-widget.js" defer></script>

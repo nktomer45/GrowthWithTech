@@ -34,15 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Navbar transparency check
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.style.background = 'rgba(5, 5, 5, 0.95)';
-            nav.style.padding = '5px 0';
-        } else {
-            nav.style.background = 'rgba(5, 5, 5, 0.7)';
-            nav.style.padding = '10px 0';
-        }
-    });
+    // Navbar scroll effect removed to keep header purely static
 });

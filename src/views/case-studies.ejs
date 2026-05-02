@@ -34,7 +34,7 @@
                         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
                             <% project.metrics.forEach(m => { %>
                                 <div>
-                                    <p style="font-size: 1.5rem; font-weight: 700; color: white;"><%= m.value %></p>
+                                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);"><%= m.value %></p>
                                     <p style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;"><%= m.label %></p>
                                 </div>
                             <% }) %>

@@ -29,22 +29,22 @@
     <section class="container section-padding case-study-details" style="display: grid; grid-template-columns: 2fr 1fr; gap: 6rem;">
         <div>
             <div class="reveal" style="margin-bottom: 5rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">The Problem</h2>
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary);">The Problem</h2>
                 <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;"><%= study.problem %></p>
             </div>
             
             <div class="reveal" style="margin-bottom: 5rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;">The Solution</h2>
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary);">The Solution</h2>
                 <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;"><%= study.solution %></p>
             </div>
 
             <div class="reveal">
-                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: white;">Core Architecture</h2>
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-primary);">Core Architecture</h2>
                 <div style="display: grid; gap: 1rem;">
                     <% study.architecture.forEach(item => { %>
                         <div style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem;">
                             <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-blue);"></div>
-                            <span style="color: white; font-weight: 500;"><%= item %></span>
+                            <span style="color: var(--text-primary); font-weight: 500;"><%= item %></span>
                         </div>
                     <% }) %>
                 </div>
@@ -66,7 +66,7 @@
                 <h4 style="margin-bottom: 1rem;">Tech Stack</h4>
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <% study.tech.forEach(t => { %>
-                        <span style="font-size: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;"><%= t %></span>
+                        <span style="font-size: 0.75rem; background: rgba(0,0,0,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px; color: var(--text-secondary);"><%= t %></span>
                     <% }) %>
                 </div>
             </div>

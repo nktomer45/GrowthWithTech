@@ -2,12 +2,12 @@
 
 <main id="main-content" role="main">
     <!-- Hero Section -->
-    <section class="hero" style="position: relative; text-align: center; padding: 10rem 1.5rem 6rem; background-image: linear-gradient(rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 1)), url('https://id-preview--4c6a3001-8aca-4cd1-9399-feb9eb89cf57.lovable.app/assets/hero-tech-CWs9adI1.jpg'); background-size: cover; background-position: center;">
+    <section class="hero" style="position: relative; text-align: center; padding: 10rem 1.5rem 6rem; background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1)), url('https://id-preview--4c6a3001-8aca-4cd1-9399-feb9eb89cf57.lovable.app/assets/hero-tech-CWs9adI1.jpg'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="glow-orb" style="top: 0%; right: -10%; background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%); margin-bottom: 30px;"></div>
         <div class="glow-orb" style="bottom: 10%; left: -10%;"></div>
         
-        <div class="hero-badge reveal" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 2rem;">
+        <div class="hero-badge reveal" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.5); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 2rem; backdrop-filter: var(--glass-blur);">
             <i class="fas fa-sparkles"></i>
             Engineering AI-driven products that ship
         </div>
@@ -18,12 +18,12 @@
         
         <div class="reveal" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 5rem;">
             <a href="/contact" class="btn-nav" style="padding: 0.8rem 2rem; font-size: 1rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">Start a project <i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
-            <a href="/portfolio" style="padding: 0.8rem 2rem; border-radius: 999px; font-size: 1rem; font-weight: 500; background: rgba(30, 41, 59, 0.3); border: 1px solid var(--border-glass); color: white;">View case studies</a>
+            <a href="/portfolio" style="padding: 0.8rem 2rem; border-radius: 999px; font-size: 1rem; font-weight: 500; background: rgba(255, 255, 255, 0.5); border: 1px solid var(--border-glass); color: var(--text-primary); backdrop-filter: var(--glass-blur);">View case studies</a>
         </div>
 
         <!-- Stats Section -->
         <div class="container reveal" style="max-width: 1000px; margin: 0 auto;">
-            <div class="stats-container" style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); border-radius: 20px; padding: 2.5rem; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; margin-bottom: 30px;">
+            <div class="stats-container" style="background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; padding: 2.5rem; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; margin-bottom: 30px; box-shadow: var(--glass-shadow);">
                 <div>
                     <h2 style="font-size: 3rem; font-weight: 700; background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.25rem;">25+</h2>
                     <p style="color: var(--text-secondary); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Projects Shipped</p>
@@ -56,10 +56,10 @@
         </div>
         <div class="grid grid-4" style="margin-bottom: 3rem;">
             <% services.forEach(service => { %>
-                <div class="card service-card reveal" style="padding: 2rem; border-radius: 20px;">
-                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fas fa-<%= service.icon %>"></i></div>
+                <div class="card service-card reveal" style="padding: 2rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
+                    <div class="icon-box" style="margin-bottom: 1.5rem; background: rgba(8, 145, 178, 0.05); border: 1px solid rgba(8, 145, 178, 0.1);"><i class="fas fa-<%= service.icon %>"></i></div>
                     <div>
-                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;"><%= service.title %></h3>
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary);"><%= service.title %></h3>
                         <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;"><%= service.description %></p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Featured Portfolio -->
-    <section class="section-padding" style="background: rgba(15, 23, 42, 0.4);">
+    <section class="section-padding" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 4rem;">
                 <h2 class="reveal" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Selected projects</h2>
@@ -80,16 +80,16 @@
             
             <div class="grid grid-2" style="gap: 2rem;">
                 <% projects.forEach(project => { %>
-                    <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+                    <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                         <span style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase;"><%= project.category %></span>
-                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem;"><%= project.title %></h3>
+                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem; color: var(--text-primary);"><%= project.title %></h3>
                         <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;"><%= project.description %></p>
                         
                         <% if (project.metrics && project.metrics.length > 0) { %>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; border-top: 1px solid var(--border-glass); padding-top: 1.5rem;">
                             <% project.metrics.forEach(metric => { %>
                                 <div>
-                                    <div style="color: white; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem;"><%= metric.value %></div>
+                                    <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem;"><%= metric.value %></div>
                                     <div style="color: var(--text-secondary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;"><%= metric.label %></div>
                                 </div>
                             <% }) %>
@@ -98,10 +98,10 @@
 
                         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2rem;">
                             <% project.tech.forEach(t => { %>
-                                <span style="font-size: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.35rem 0.85rem; border-radius: 999px; color: var(--text-secondary);"><%= t %></span>
+                                <span style="font-size: 0.75rem; background: rgba(0,0,0,0.03); border: 1px solid var(--border-glass); padding: 0.35rem 0.85rem; border-radius: 999px; color: var(--text-secondary);"><%= t %></span>
                             <% }) %>
                         </div>
-                        <a href="/case-study/<%= project.id %>" style="color: white; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">View Case Study <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
+                        <a href="/case-study/<%= project.id %>" style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">View Case Study <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></a>
                     </div>
                 <% }) %>
             </div>
@@ -119,7 +119,7 @@
         
         <div class="grid grid-3" style="text-align: left; gap: 1.5rem;">
             <!-- Card 1 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">Languages</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">TypeScript</span>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">Frontend</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">React 19</span>
@@ -143,7 +143,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">Backend</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">Node.js</span>
@@ -155,7 +155,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">AI / LLMS</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">OpenAI</span>
@@ -168,7 +168,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">Cloud / Infra</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">Cloudflare</span>
@@ -180,7 +180,7 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <h4 style="margin-bottom: 1.5rem; color: var(--accent-cyan); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">Growth</h4>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 0.4rem 1rem; border-radius: 999px;">GA4</span>
@@ -203,26 +203,26 @@
         </div>
         
         <div class="grid grid-3" style="text-align: left; gap: 1.5rem;">
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <div style="color: var(--accent-cyan); font-size: 1.25rem; margin-bottom: 1.5rem;"><i class="fas fa-bolt"></i></div>
-                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Ship fast, ship right</h4>
+                <h4 style="margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.125rem;">Ship fast, ship right</h4>
                 <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">Production-grade from day one. Rapid, robust execution.</p>
             </div>
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <div style="color: var(--accent-cyan); font-size: 1.25rem; margin-bottom: 1.5rem;"><i class="fas fa-shield-alt"></i></div>
-                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">Trust by design</h4>
+                <h4 style="margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.125rem;">Trust by design</h4>
                 <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">Security, QA, scalable architecture baked in.</p>
             </div>
-            <div class="card reveal" style="padding: 2.5rem; background: rgba(10, 14, 23, 0.6); border-radius: 20px;">
+            <div class="card reveal" style="padding: 2.5rem; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-glass); border-radius: 20px; box-shadow: var(--glass-shadow);">
                 <div style="color: var(--accent-cyan); font-size: 1.25rem; margin-bottom: 1.5rem;"><i class="fas fa-code"></i></div>
-                <h4 style="margin-bottom: 0.75rem; color: white; font-size: 1.125rem;">It actually works</h4>
+                <h4 style="margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.125rem;">It actually works</h4>
                 <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">Clean, maintainable code over time with zero surprises.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section style="padding: 8rem 0; position: relative; overflow: hidden; background: linear-gradient(to top, rgba(14, 165, 233, 0.1), transparent), radial-gradient(circle at bottom, rgba(192, 38, 211, 0.15), transparent 70%);">
+    <section style="padding: 8rem 0; position: relative; overflow: hidden; background: linear-gradient(to top, rgba(14, 165, 233, 0.05), transparent), radial-gradient(circle at bottom, rgba(192, 38, 211, 0.05), transparent 70%);">
         <div class="container" style="position: relative; z-index: 1;">
             <div class="reveal" style="text-align: center;">
                 <h2 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem;">Have an ambitious idea? <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let's build it.</span></h2>
