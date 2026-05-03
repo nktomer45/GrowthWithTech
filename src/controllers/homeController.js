@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 const projects = [
     {
         id: 'neural-support-agent',
@@ -194,6 +196,13 @@ exports.getServicesPage = (req, res) => {
 };
 
 exports.getContactPage = (req, res) => {
+    // Optionally pre-select service based on plan
+    const plan = req.query.plan;
+    let selectedService = '';
+    if(plan === 'starter') selectedService = 'Web Platform / Architecture';
+    else if(plan === 'growth') selectedService = 'Growth & Analytics';
+    else if(plan === 'custom') selectedService = 'AI / LLM Integration';
+
     res.render('contact', {
         title: 'Contact GrowthWithTech | Start Your Project Today',
         seoDesc: 'Get in touch with GrowthWithTech. Email info@growthwithtech.com or call +91 9667854160. Located at Gaur City Mall, Noida. We respond within 48 hours.',
@@ -201,8 +210,81 @@ exports.getContactPage = (req, res) => {
         breadcrumbs: [
             { name: 'Home', url: 'https://growthwithtech.com/' },
             { name: 'Contact', url: 'https://growthwithtech.com/contact' }
-        ]
+        ],
+        selectedService: selectedService,
+        successMessage: null,
+        errorMessage: null
     });
+};
+
+exports.postContactPage = async (req, res) => {
+    try {
+        const { name, email, company, service, details } = req.body;
+
+        // Create a transporter using SMTP settings from .env
+        // If not set, it will fail gracefully or you can add dummy credentials
+        const transporter = nodemailer.createTransport({
+            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+            port: process.env.SMTP_PORT || 587,
+            secure: process.env.SMTP_SECURE === 'true',
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
+            }
+        });
+
+        const mailOptions = {
+            from: process.env.SMTP_USER || '"GrowthWithTech Website" <noreply@growthwithtech.com>',
+            to: 'info@growthwithtech.com', // Send to user's requested email
+            subject: `New Lead: ${service} from ${name}`,
+            html: `
+                <h3>New Project Inquiry from GrowthWithTech.com</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Company:</strong> ${company || 'N/A'}</p>
+                <p><strong>Service Requested:</strong> ${service}</p>
+                <p><strong>Project Details:</strong></p>
+                <blockquote style="background:#f9f9f9; padding:15px; border-left:5px solid #ccc;">${details}</blockquote>
+            `
+        };
+
+        // Only attempt to send if SMTP user is configured, otherwise simulate success
+        if (process.env.SMTP_USER) {
+            await transporter.sendMail(mailOptions);
+        } else {
+            console.log('--- Email Simulation (Configure SMTP in .env to send for real) ---');
+            console.log(mailOptions);
+        }
+
+        // Render contact page with success message
+        res.render('contact', {
+            title: 'Message Sent | GrowthWithTech',
+            seoDesc: 'Thank you for contacting GrowthWithTech.',
+            pageUrl: '/contact',
+            breadcrumbs: [
+                { name: 'Home', url: 'https://growthwithtech.com/' },
+                { name: 'Contact', url: 'https://growthwithtech.com/contact' }
+            ],
+            selectedService: '',
+            successMessage: 'Thank you for reaching out! Your message has been sent successfully. We will get back to you within 48 hours.',
+            errorMessage: null
+        });
+
+    } catch (error) {
+        console.error('Email send error:', error);
+        res.render('contact', {
+            title: 'Error | GrowthWithTech',
+            seoDesc: 'There was an error sending your message.',
+            pageUrl: '/contact',
+            breadcrumbs: [
+                { name: 'Home', url: 'https://growthwithtech.com/' },
+                { name: 'Contact', url: 'https://growthwithtech.com/contact' }
+            ],
+            selectedService: '',
+            successMessage: null,
+            errorMessage: 'There was a problem sending your message. Please try emailing us directly at info@growthwithtech.com.'
+        });
+    }
 };
 
 exports.getSitemapXml = (req, res) => {

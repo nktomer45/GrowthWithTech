@@ -11,6 +11,7 @@ router.get('/case-study/:id', homeController.getCaseStudyPage);
 router.get('/about', homeController.getAboutPage);
 router.get('/contact', homeController.getContactPage);
 router.get('/offline', homeController.getOfflinePage);
+router.post('/contact', homeController.postContactPage);
 
 // API Routes
 router.post('/api/chat', chatController.handleChat);
