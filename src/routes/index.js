@@ -13,6 +13,15 @@ router.get('/contact', homeController.getContactPage);
 router.get('/offline', homeController.getOfflinePage);
 router.post('/contact', homeController.postContactPage);
 
+// New Sitemap Routes
+router.get('/blog', homeController.getBlogPage);
+router.get('/careers', homeController.getCareersPage);
+router.get('/services/web-development', homeController.getServiceWebDev);
+router.get('/services/ai-automation', homeController.getServiceAiAuto);
+router.get('/services/graphic-design', homeController.getServiceDesign);
+router.get('/services/seo-marketing', homeController.getServiceSeo);
+router.get('/services/cloud-architecture', homeController.getServiceCloud);
+
 // API Routes
 router.post('/api/chat', chatController.handleChat);
 

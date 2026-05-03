@@ -287,13 +287,99 @@ exports.postContactPage = async (req, res) => {
     }
 };
 
+// --- NEW SITEMAP ROUTES ---
+
+exports.getBlogPage = (req, res) => {
+    res.render('generic-page', {
+        title: 'Blog | GrowthWithTech Insights',
+        seoDesc: 'Read the latest insights on AI, web development, SEO, and growth marketing from the engineering team at GrowthWithTech.',
+        pageUrl: '/blog',
+        pageTitle: 'Our Blog',
+        pageSubtitle: 'Insights and engineering notes from our team.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Blog', url: 'https://growthwithtech.com/blog' }]
+    });
+};
+
+exports.getCareersPage = (req, res) => {
+    res.render('generic-page', {
+        title: 'Careers | Join GrowthWithTech',
+        seoDesc: 'Join GrowthWithTech. We are looking for senior engineers, designers, and growth marketers who care about craft and outcomes.',
+        pageUrl: '/careers',
+        pageTitle: 'Join the Team',
+        pageSubtitle: 'Build the next generation of intelligent products with us.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Careers', url: 'https://growthwithtech.com/careers' }]
+    });
+};
+
+exports.getServiceWebDev = (req, res) => {
+    res.render('generic-page', {
+        title: 'Web & Mobile Development | GrowthWithTech',
+        seoDesc: 'High-performance web applications and mobile experiences built with modern stacks (React, Node, Next.js).',
+        pageUrl: '/services/web-development',
+        pageTitle: 'Web & Mobile Development',
+        pageSubtitle: 'Scalable, performant, and accessible digital products.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Services', url: 'https://growthwithtech.com/services' }, { name: 'Web & Mobile Dev', url: 'https://growthwithtech.com/services/web-development' }]
+    });
+};
+
+exports.getServiceAiAuto = (req, res) => {
+    res.render('generic-page', {
+        title: 'AI & Automation | GrowthWithTech',
+        seoDesc: 'Custom AI agents, LLM integrations, and process automations that save time and scale business operations.',
+        pageUrl: '/services/ai-automation',
+        pageTitle: 'AI & Automation',
+        pageSubtitle: 'Agentic workflows and LLM integrations that drive real ROI.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Services', url: 'https://growthwithtech.com/services' }, { name: 'AI & Automation', url: 'https://growthwithtech.com/services/ai-automation' }]
+    });
+};
+
+exports.getServiceDesign = (req, res) => {
+    res.render('generic-page', {
+        title: 'Graphic Design & Branding | GrowthWithTech',
+        seoDesc: 'Premium UI/UX design, brand identity, and design systems engineered for clarity and conversion.',
+        pageUrl: '/services/graphic-design',
+        pageTitle: 'Graphic Design & Branding',
+        pageSubtitle: 'Premium design systems crafted for modern brands.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Services', url: 'https://growthwithtech.com/services' }, { name: 'Design & Branding', url: 'https://growthwithtech.com/services/graphic-design' }]
+    });
+};
+
+exports.getServiceSeo = (req, res) => {
+    res.render('generic-page', {
+        title: 'SEO & Digital Marketing | GrowthWithTech',
+        seoDesc: 'Data-driven marketing, programmatic SEO, and paid ad management to scale your inbound lead generation.',
+        pageUrl: '/services/seo-marketing',
+        pageTitle: 'SEO & Digital Marketing',
+        pageSubtitle: 'Data-driven growth engines and inbound marketing.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Services', url: 'https://growthwithtech.com/services' }, { name: 'SEO & Marketing', url: 'https://growthwithtech.com/services/seo-marketing' }]
+    });
+};
+
+exports.getServiceCloud = (req, res) => {
+    res.render('generic-page', {
+        title: 'Cloud Architecture & DevOps | GrowthWithTech',
+        seoDesc: 'Robust cloud infrastructure, CI/CD pipelines, and DevOps consulting for secure, scalable software deployments.',
+        pageUrl: '/services/cloud-architecture',
+        pageTitle: 'Cloud Architecture & DevOps',
+        pageSubtitle: 'Secure, scalable, and automated cloud infrastructure.',
+        breadcrumbs: [{ name: 'Home', url: 'https://growthwithtech.com/' }, { name: 'Services', url: 'https://growthwithtech.com/services' }, { name: 'Cloud & DevOps', url: 'https://growthwithtech.com/services/cloud-architecture' }]
+    });
+};
+
 exports.getSitemapXml = (req, res) => {
     const pages = [
         { url: '/',              priority: '1.0', freq: 'weekly'  },
         { url: '/services',      priority: '0.9', freq: 'monthly' },
+        { url: '/services/web-development', priority: '0.8', freq: 'monthly' },
+        { url: '/services/ai-automation', priority: '0.8', freq: 'monthly' },
+        { url: '/services/graphic-design', priority: '0.8', freq: 'monthly' },
+        { url: '/services/seo-marketing', priority: '0.8', freq: 'monthly' },
+        { url: '/services/cloud-architecture', priority: '0.8', freq: 'monthly' },
         { url: '/portfolio',     priority: '0.8', freq: 'monthly' },
         { url: '/case-studies',  priority: '0.8', freq: 'monthly' },
         { url: '/about',         priority: '0.7', freq: 'monthly' },
+        { url: '/blog',          priority: '0.7', freq: 'weekly'  },
+        { url: '/careers',       priority: '0.5', freq: 'monthly' },
         { url: '/contact',       priority: '0.7', freq: 'monthly' },
         ...projects.map(p => ({
             url: `/case-study/${p.id}`,

@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<main id="main-content" role="main">
+    <!-- Page Header -->
+    <section class="container section-padding" style="padding-bottom: 2rem;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <!-- Breadcrumbs -->
+            <% if (typeof breadcrumbs !== 'undefined' && breadcrumbs.length > 0) { %>
+                <nav aria-label="breadcrumb" style="margin-bottom: 2rem;">
+                    <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+                        <% breadcrumbs.forEach((crumb, index) => { %>
+                            <li>
+                                <% if (index < breadcrumbs.length - 1) { %>
+                                    <a href="<%= crumb.url.replace('https://growthwithtech.com', '') %>" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'"><%= crumb.name %></a>
+                                    <i class="fas fa-chevron-right" style="font-size: 0.6rem; margin-left: 0.5rem; opacity: 0.5;"></i>
+                                <% } else { %>
+                                    <span style="color: var(--text-primary); font-weight: 500;" aria-current="page"><%= crumb.name %></span>
+                                <% } %>
+                            </li>
+                        <% }); %>
+                    </ol>
+                </nav>
+            <% } %>
+
+            <h1 class="reveal" style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.04em;"><%= pageTitle %></h1>
+            <p class="reveal" style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6;"><%= pageSubtitle %></p>
+        </div>
+    </section>
+
+    <!-- Placeholder Content Area -->
+    <section class="container section-padding" style="padding-top: 2rem; padding-bottom: 6rem; min-height: 40vh;">
+        <div class="card reveal" style="padding: 4rem 2rem; text-align: center; background: var(--bg-card); backdrop-filter: var(--glass-blur); border: 1px dashed var(--border-glass); border-radius: 24px; max-width: 800px; margin: 0 auto;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(14, 165, 233, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); font-size: 1.5rem; margin: 0 auto 1.5rem;">
+                <i class="fas fa-hammer"></i>
+            </div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Coming Soon</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">We are currently engineering this page. Check back soon for detailed information about our workflows and processes.</p>
+            <a href="/contact" class="btn btn-primary">Start a Project</a>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
