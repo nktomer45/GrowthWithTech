@@ -21,7 +21,7 @@ app.use(helmet({
 // Rate Limiting (Prevents DDoS and brute force)
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+    max: process.env.NODE_ENV === 'production' ? 100 : 2000, // Limit each IP to 100 in production, 2000 in dev
     message: 'Too many requests from this IP, please try again after 15 minutes.',
     standardHeaders: true,
     legacyHeaders: false,
